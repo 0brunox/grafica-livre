@@ -30,6 +30,25 @@ npm run dev
 Abra http://localhost:5173 — o app roda em **modo local**, guardando os dados no
 localStorage do navegador. Ideal para testar ou para uso individual num único computador.
 
+### Não tem prática com terminal? Use um assistente de IA
+
+Se você tem o [Claude Code](https://claude.com/claude-code) ou o
+[Codex](https://openai.com/codex) instalado, não precisa digitar nenhum
+comando. Abra o assistente numa pasta vazia e cole isto:
+
+> Instale e rode o sistema do repositório https://github.com/0brunox/grafica-livre.
+> Clone o projeto, instale as dependências e suba o servidor de desenvolvimento.
+> Se eu ainda não tiver o Node.js 20 ou superior, instale antes. Quando estiver
+> no ar, me diga o endereço para abrir no navegador.
+
+Ele cuida do clone, do `npm install` e de subir o servidor — inclusive de instalar
+o Node.js, se faltar. Para parar e voltar a usar depois, peça: *"suba de novo o
+servidor do Gráfica Livre"*.
+
+Para configurar o **modo nuvem** (seção seguinte), o assistente também resolve a
+parte técnica — executar o `schema.sql` e preencher o `.env`. A criação da conta no
+Supabase e a cópia das chaves são suas: ele vai pedir esses dados a você.
+
 ## Modo nuvem (Supabase — gratuito)
 
 Para acessar de vários dispositivos, com login e dados no banco:
