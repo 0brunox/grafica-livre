@@ -38,14 +38,22 @@ Para acessar de vários dispositivos, com login e dados no banco:
 2. No **SQL Editor** do projeto, cole e execute o conteúdo de [`supabase/schema.sql`](supabase/schema.sql)
    (cria tabelas, RLS e a função de numeração atômica — seguro rodar mais de uma vez).
 3. Em **Authentication → Users**, crie seu usuário (e-mail/senha).
-4. Copie `.env.example` para `.env` e preencha com os valores de **Settings → API**:
+4. **Desligue o cadastro aberto** em **Authentication → Sign In / Providers → Email**,
+   na opção *"Allow new users to sign up"*.
+
+   > ⚠️ O Supabase vem com o cadastro **liberado por padrão**. Sem esse passo, qualquer
+   > pessoa que souber o endereço do seu app cria uma conta no seu projeto. Os dados de
+   > cada usuário continuam isolados por RLS — ninguém enxerga os seus —, mas a cota do
+   > projeto é sua. Crie os usuários da sua equipe manualmente em *Authentication → Users*.
+
+5. Copie `.env.example` para `.env` e preencha com os valores de **Settings → API**:
 
    ```
    VITE_SUPABASE_URL=https://SEU-PROJETO.supabase.co
    VITE_SUPABASE_ANON_KEY=SUA-CHAVE-ANON
    ```
 
-5. `npm run dev` — agora o app abre com landing page + login.
+6. `npm run dev` — agora o app abre com landing page + login.
 
 Os dados de cada usuário são isolados por Row Level Security.
 
